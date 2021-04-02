@@ -1,0 +1,47 @@
+{% extends "layouts/default.njk" %}
+
+{% from "partials/card.njk" import card %}
+{% from "partials/icon.njk" import icon %}
+
+{% block main %}
+  <main class="main main--tutorials" id="main">
+    <header class="header">
+      <div>
+        {{ content | safe }}
+      </div>
+      <a href="https://github.com/{{ pkg.repository }}" class="button">Submit a tutorial</a>
+    </header>
+
+
+    <ul class="examples examples--tutorials" role="list">
+      {% for case in covid19_cases | sort(attribute='date') | reverse %}
+		{% set url %}
+			https://www.worldometers.info/coronavirus/
+		{% endset %}
+		
+        {% set title %}
+         Cases for {{ case.date }} {{ icon({ id: "external-link", uniqueId: loop.index, title: "External link" }) }}
+        {% endset %}
+		
+		{% set description %}
+         Cases for {{ case.date }} confirmed cases are {{ case.confirmed}}, death are {{ case.death }}, and recovered are {{ case.recovered }}
+        {% endset %}
+
+        {% set timeStamp %}
+          Posted: <time datetime="{{ case.date }}">{{ case.date | readableDate }}</time>
+        {% endset %}
+
+        <li class="examples__item">
+          {{ card({
+            url: url,
+            title: title | safe,
+            description: description | safe,
+            details: timeStamp | safe
+          }) }}
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
+  {% include "partials/sidebar.njk" %}
+{% endblock %}
+

@@ -1,0 +1,14 @@
+[
+  {
+    "confirmed": "100",
+	"death": "1",
+	"recovered": "90",
+	"date": "2021-01-01"
+  },
+  {
+    "confirmed": "110",
+	"death": "2",
+	"recovered": "91",
+	"date": "2021-01-02"
+  }
+]
