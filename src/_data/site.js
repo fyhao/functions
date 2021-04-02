@@ -40,6 +40,10 @@ module.exports = {
       url: "https://docs.netlify.com/functions/overview/",
       title: "Documentation",
     },
+	{
+      url: "/covid19/",
+      title: "COVID 19",
+    },
   ],
 
   navigationSecondary: [
