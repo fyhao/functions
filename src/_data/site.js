@@ -10,7 +10,7 @@ module.exports = {
   image: "/assets/images/logos/logo.png",
 
   parentUrl: "https://netlify.com",
-  url: "https://functions.netlify.com",
+  url: "https://60672dc73f60d0a56f329c92--happy-haibt-142102.netlify.app/",
   logo: "/assets/images/logos/logo.svg",
   logoChild: "/assets/images/logos/functions.svg",
   lang: "en-US",
